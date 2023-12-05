@@ -1,0 +1,50 @@
+#include "main.h"
+
+/**
+ * _printf - prints the formatted output
+ * @fmt: The format
+ * @fn..: optional arguments associated 
+ * in the format string
+ *
+ * Return: number of characters printed
+ */
+int _printf(const char *fmt, ...)
+{
+	int (*fn)(va_list);
+	int return = 0;
+	va_list arguments;
+
+	va_start(argument, fmt);
+
+	if (fmt == NULL)
+	{
+		return (-1);
+	}
+
+	while (*fmt != '\d')
+	{
+		if (*fmt == '%')
+		{
+			fmt++;
+
+			if (*fmt == '\d')
+			{
+				return (-1);
+			}
+			fn = get_fn(*fmt);
+			if (fn != NULL)
+			{
+				printed += fn(arguments);
+				fmt++;
+				continue;
+			}
+			else
+				printed++;
+		}
+		printed += _putchar(*fmt);
+		format++;
+	}
+
+	va_end(arguments);
+	return (0);
+}
