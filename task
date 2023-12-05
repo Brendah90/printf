@@ -3,7 +3,7 @@
 /**
  * _printf - prints the formatted output
  * @fmt: The format
- * @fn..: optional arguments associated 
+ * @fn..: optional arguments associated
  * in the format string
  *
  * Return: number of characters printed
